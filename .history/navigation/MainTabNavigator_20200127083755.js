@@ -1,15 +1,22 @@
 import React from "react";
 import { Platform } from "react-native";
-import {
-  createBottomTabNavigator,
-  createStackNavigator
-} from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+import { createBottomTabNavigator } from "react-navigation-tabs";
+
 import TabBarIcon from "../components/TabBarIcon";
 import HomeScreen from "../screens/HomeScreen";
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen
+const config = Platform.select({
+  web: { headerMode: "screen" },
+  default: {}
 });
+
+const HomeStack = createStackNavigator(
+  {
+    Home: HomeScreen
+  },
+  config
+);
 
 HomeStack.navigationOptions = {
   tabBarLabel: "Home",
@@ -25,6 +32,12 @@ HomeStack.navigationOptions = {
   )
 };
 
-export default createBottomTabNavigator({
+HomeStack.path = "";
+
+const tabNavigator = createBottomTabNavigator({
   HomeStack
 });
+
+tabNavigator.path = "";
+
+export default tabNavigator;
