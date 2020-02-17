@@ -6,6 +6,7 @@ import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 import AppNavigator from "./navigation/AppNavigator";
+import TabNavigator from "./navigation/MainTabNavigator";
 
 import { NavigationContainer } from "@react-navigation/native";
 
@@ -25,7 +26,7 @@ export default function App(props) {
       <NavigationContainer>
         <View style={styles.container}>
           {Platform.OS === "ios" && <StatusBar barStyle="default" />}
-          <AppNavigator />
+          <TabNavigator />
         </View>
       </NavigationContainer>
     );

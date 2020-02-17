@@ -8,7 +8,7 @@ import HomeScreen from "../screens/HomeScreen";
 const HomeStackNavigator = createStackNavigator();
 const HomeStack = () => (
   <HomeStackNavigator.Navigator>
-    <HomeStack.Screen name={"Home"} component={HomeScreen} />
+    <HomeStackNavigator.Screen name={"Home"} component={HomeScreen} />
   </HomeStackNavigator.Navigator>
 );
 
