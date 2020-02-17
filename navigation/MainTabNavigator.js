@@ -1,6 +1,6 @@
 import React from "react";
 import { Platform } from "react-native";
-import { createBottomTabNavigator } from "react-navigation-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import TabBarIcon from "../components/TabBarIcon";
 import HomeScreen from "../screens/HomeScreen";
@@ -11,6 +11,16 @@ const HomeStack = () => (
     <HomeStack.Screen name={"Home"} component={HomeScreen} />
   </HomeStackNavigator.Navigator>
 );
+
+const Tab = createBottomTabNavigator();
+
+const TabNavigator = () => {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name={"Home"} component={HomeStack} />
+    </Tab.Navigator>
+  );
+};
 
 // const HomeStack = createStackNavigator({
 //   Home: HomeScreen
@@ -30,6 +40,4 @@ const HomeStack = () => (
 //   )
 // };
 
-export default createBottomTabNavigator({
-  HomeStack
-});
+export default TabNavigator;
