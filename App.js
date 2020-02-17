@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-import AppNavigator from "./navigation/AppNavigator";
 import TabNavigator from "./navigation/MainTabNavigator";
 
 import { NavigationContainer } from "@react-navigation/native";
