@@ -15,7 +15,7 @@ const HomeStack = () => (
 
 const Tab = createBottomTabNavigator();
 
-const getHomeTabBarIcon = (focused, color, size) => {
+const getHomeTabBarIcon = focused => {
   return (
     <TabBarIcon
       Icon={Icon.MaterialCommunityIcons}
