@@ -3,7 +3,7 @@ import { Platform } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import TabBarIcon from "../components/TabBarIcon";
-import { Icon } from "expo";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import HomeScreen from "../screens/HomeScreen";
 
 const HomeStackNavigator = createStackNavigator();
@@ -15,32 +15,20 @@ const HomeStack = () => (
 
 const Tab = createBottomTabNavigator();
 
-const getHomeTabBarIcon = focused => {
+const getHomeTabBarIcon = (focused, color, size, route) => {
   return (
-    <TabBarIcon
-      Icon={Icon.MaterialCommunityIcons}
-      focused={focused}
-      name="fire"
-    />
+    <TabBarIcon Icon={MaterialCommunityIcons} focused={focused} name={"fire"} />
   );
 };
 
 const TabNavigator = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator initialRouteName="Home">
       <Tab.Screen
         name={"Home"}
         component={HomeStack}
         options={{
-          tabBarIcon: focused => {
-            return (
-              <TabBarIcon
-                Icon={Icon.MaterialCommunityIcons}
-                focused={focused}
-                name="fire"
-              />
-            );
-          }
+          tabBarIcon: focused => getHomeTabBarIcon({ focused })
         }}
       />
     </Tab.Navigator>
