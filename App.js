@@ -3,7 +3,11 @@ import { Asset } from "expo-asset";
 import * as Font from "expo-font";
 import React, { useState } from "react";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import {
+  Ionicons,
+  MaterialCommunityIcons,
+  FontAwesome
+} from "@expo/vector-icons";
 
 import TabNavigator from "./navigation/MainTabNavigator";
 
@@ -24,7 +28,7 @@ export default function App(props) {
     return (
       <NavigationContainer>
         <View style={styles.container}>
-          {Platform.OS === "ios" && <StatusBar barStyle="default" />}
+          <StatusBar hidden />
           <TabNavigator />
         </View>
       </NavigationContainer>
@@ -35,12 +39,14 @@ export default function App(props) {
 async function loadResourcesAsync() {
   await Promise.all([
     Asset.loadAsync([
-      require("./assets/images/robot-dev.png"),
-      require("./assets/images/robot-prod.png")
+      require("./assets/images/splash.png"),
+      require("./assets/images/icon.png")
     ]),
     Font.loadAsync({
       // This is the font that we are using for our tab bar
       ...Ionicons.font,
+      ...MaterialCommunityIcons.font,
+      ...FontAwesome.font,
       // We include SpaceMono because we use it in HomeScreen.js. Feel free to
       // remove this if you are not using it in your app
       "space-mono": require("./assets/fonts/SpaceMono-Regular.ttf")
