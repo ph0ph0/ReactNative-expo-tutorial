@@ -50,7 +50,6 @@ const ProfileStack = () => (
 const Tab = createBottomTabNavigator();
 
 const getHomeTabBarIcon = (focused, color, size) => {
-  console.log(`HomeIconFocused?: ${JSON.stringify(focused)}`);
   return (
     <TabBarIcon Icon={MaterialCommunityIcons} focused={focused} name={"fire"} />
   );
