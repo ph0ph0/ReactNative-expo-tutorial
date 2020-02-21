@@ -49,14 +49,15 @@ const ProfileStack = () => (
 
 const Tab = createBottomTabNavigator();
 
-const getHomeTabBarIcon = (focused, color, size, route) => {
+const getHomeTabBarIcon = (focused, color, size) => {
+  console.log(`HomeIconFocused?: ${JSON.stringify(focused)}`);
   return (
     <TabBarIcon Icon={MaterialCommunityIcons} focused={focused} name={"fire"} />
   );
 };
 
 const getTopPicksTabBarIcon = focused => {
-  return <TabBarIcon Icon={FontAwesome} focused={false} name={"diamond"} />;
+  return <TabBarIcon Icon={FontAwesome} focused={focused} name={"diamond"} />;
 };
 
 const getMessagesTabBarIcon = focused => {
@@ -76,28 +77,32 @@ const TabNavigator = () => {
         name={"Home"}
         component={HomeStack}
         options={{
-          tabBarIcon: focused => getHomeTabBarIcon({ focused })
+          tabBarIcon: ({ focused, color, size }) =>
+            getHomeTabBarIcon(focused, color, size)
         }}
       />
       <Tab.Screen
         name={"TopPicks"}
         component={TopPicksStack}
         options={{
-          tabBarIcon: focused => getTopPicksTabBarIcon({ focused })
+          tabBarIcon: ({ focused, color, size }) =>
+            getTopPicksTabBarIcon(focused, color, size)
         }}
       />
       <Tab.Screen
         name={"Messages"}
         component={MessagesStack}
         options={{
-          tabBarIcon: focused => getMessagesTabBarIcon({ focused })
+          tabBarIcon: ({ focused, color, size }) =>
+            getMessagesTabBarIcon(focused, color, size)
         }}
       />
       <Tab.Screen
         name={"Profile"}
         component={ProfileStack}
         options={{
-          tabBarIcon: focused => getProfileTabBarIcon({ focused })
+          tabBarIcon: ({ focused, color, size }) =>
+            getProfileTabBarIcon(focused, color, size)
         }}
       />
     </Tab.Navigator>
