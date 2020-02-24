@@ -49,7 +49,7 @@ const ProfileStack = () => (
 
 const Tab = createBottomTabNavigator();
 
-const getHomeTabBarIcon = (focused, color, size) => {
+const getHomeTabBarIcon = focused => {
   return (
     <TabBarIcon Icon={MaterialCommunityIcons} focused={focused} name={"fire"} />
   );
