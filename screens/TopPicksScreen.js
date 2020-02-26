@@ -1,11 +1,13 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, SafeAreaView } from "react-native";
 
 const TopPicksScreen = () => {
   return (
-    <View>
-      <Text>Top Picks Screen</Text>
-    </View>
+    <SafeAreaView>
+      <View>
+        <Text>Top Picks Screen</Text>
+      </View>
+    </SafeAreaView>
   );
 };
 

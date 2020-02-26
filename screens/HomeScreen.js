@@ -5,6 +5,7 @@ import {
   Image,
   Platform,
   ScrollView,
+  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -13,9 +14,11 @@ import {
 
 const HomeScreen = () => {
   return (
-    <BG>
-      <Title>HOME SCREEN</Title>
-    </BG>
+    <SafeAreaView>
+      <BG>
+        <Title>HOME SCREEN</Title>
+      </BG>
+    </SafeAreaView>
   );
 };
 

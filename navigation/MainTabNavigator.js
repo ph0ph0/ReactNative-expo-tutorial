@@ -15,16 +15,16 @@ import ProfileScreen from "../screens/ProfileScreen";
 
 const HomeStackNavigator = createStackNavigator();
 const HomeStack = () => (
-  <HomeStackNavigator.Navigator>
+  <HomeStackNavigator.Navigator headerMode="none">
     <HomeStackNavigator.Screen name={"Home"} component={HomeScreen} />
   </HomeStackNavigator.Navigator>
 );
 
 const TopPicksStackNavigator = createStackNavigator();
 const TopPicksStack = () => (
-  <TopPicksStackNavigator.Navigator>
+  <TopPicksStackNavigator.Navigator headerMode="none">
     <TopPicksStackNavigator.Screen
-      name={"TopPicks"}
+      name={"Top Picks"}
       component={TopPicksScreen}
     />
   </TopPicksStackNavigator.Navigator>
@@ -32,7 +32,7 @@ const TopPicksStack = () => (
 
 const MessagesStackNavigator = createStackNavigator();
 const MessagesStack = () => (
-  <MessagesStackNavigator.Navigator>
+  <MessagesStackNavigator.Navigator headerMode="none">
     <MessagesStackNavigator.Screen
       name={"Messages"}
       component={MessagesScreen}
@@ -42,7 +42,7 @@ const MessagesStack = () => (
 
 const ProfileStackNavigator = createStackNavigator();
 const ProfileStack = () => (
-  <ProfileStackNavigator.Navigator>
+  <ProfileStackNavigator.Navigator headerMode="none">
     <ProfileStackNavigator.Screen name={"Profile"} component={ProfileScreen} />
   </ProfileStackNavigator.Navigator>
 );
