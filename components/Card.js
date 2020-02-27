@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   imageContainer: {
-    width: (Layout.window.width = 30),
+    width: Layout.window.width - 30,
     height: Layout.window.height - TAB_BAR_HEIGHT * 6,
     borderRadius: 20,
     overflow: "hidden"
