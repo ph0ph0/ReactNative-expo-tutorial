@@ -1,33 +1,32 @@
-import * as WebBrowser from "expo-web-browser";
 import styled from "styled-components";
 import React from "react";
-import {
-  Image,
-  Platform,
-  ScrollView,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View
-} from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
+import Swiper from "react-native-deck-swiper";
+
+import { Card } from "../components/Card";
+
+import { HomeScreenPics } from "../constants/Pics";
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView>
-      <BG>
-        <Title>HOME SCREEN</Title>
-      </BG>
+    <SafeAreaView style={StyleSheet.container}>
+      <Swiper
+        cards={HomeScreenPics}
+        renderCard={Card}
+        infinite
+        backgroundColor="white"
+        cardHorizontalMargin={0}
+        stackSize={2}
+      />
     </SafeAreaView>
   );
 };
 
-const BG = styled.View`
-  background-color: black;
-`;
-
-const Title = styled.Text`
-  color: white;
-`;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "transparent"
+  }
+});
 
 export default HomeScreen;
