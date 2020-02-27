@@ -9,7 +9,7 @@ import { HomeScreenPics } from "../constants/Pics";
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView style={StyleSheet.container}>
+    <SafeAreaView style={styles.container}>
       <Swiper
         cards={HomeScreenPics}
         renderCard={Card}
